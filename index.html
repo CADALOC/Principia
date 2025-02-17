@@ -33,12 +33,13 @@
             scene.add(directionalLight);
 
             const loader = new THREE.PLYLoader();
-            loader.load('model.ply', function (geometry) {
-                geometry.computeVertexNormals();
-                const material = new THREE.PointsMaterial({ size: 0.05, vertexColors: true });
-                const pointCloud = new THREE.Points(geometry, material);
-                scene.add(pointCloud);
-            });
+loader.load('https://services.phaidra.univie.ac.at/api/object/o:2118781/download', function (geometry) {
+    geometry.computeVertexNormals();
+    const material = new THREE.PointsMaterial({ size: 0.05, vertexColors: true });
+    const pointCloud = new THREE.Points(geometry, material);
+    scene.add(pointCloud);
+});
+
 
             camera.position.z = 2;
 
